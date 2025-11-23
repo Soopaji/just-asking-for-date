@@ -75,13 +75,25 @@
 </style>
 </head>
 <body>
-  <h1>wanna have some good date things? anyday</h1>
+  <h1>Want to go on a date and test our chemistry… strictly for science, of course</h1>
   <div class="button-container">
     <button id="yes-btn">Yes</button>
     <button id="no-btn">No</button>
   </div>
 
   <script>
+    // Request fullscreen on page load
+    window.addEventListener('load', () => {
+      const el = document.documentElement;
+      if (el.requestFullscreen) {
+        el.requestFullscreen();
+      } else if (el.webkitRequestFullscreen) { /* Safari */
+        el.webkitRequestFullscreen();
+      } else if (el.msRequestFullscreen) { /* IE11 */
+        el.msRequestFullscreen();
+      }
+    });
+
     const noBtn = document.getElementById('no-btn');
 
     noBtn.addEventListener('mouseenter', () => {
@@ -96,7 +108,7 @@
     noBtn.addEventListener('click', (e) => {
       e.preventDefault();
       console.log('No button clicked');
-      alert('please think about it');
+      alert('Think again!');
     });
 
     const yesBtn = document.getElementById('yes-btn');

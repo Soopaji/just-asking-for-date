@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>say yes please</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+  body {
+    font-family: 'Comic Neue', cursive, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    user-select: none;
+
+    /* Animated pink gradient background */
+    background: linear-gradient(270deg, #ff99cc, #ff66b2, #ff3399, #ff66b2, #ff99cc);
+    background-size: 1000% 1000%;
+    animation: pinkGradient 20s ease infinite;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px #cc3377;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  button {
+    background-color: #0d0308;
+    border: none;
+    border-radius: 15px;
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px #e34e92;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  button:hover {
+    box-shadow: 0 6px 12px #11050a;
+    transform: scale(1.05);
+  }
+
+  #no-btn {
+    position: relative;
+    transition: left 0.2s ease, top 0.2s ease;
+  }
+
+  @keyframes pinkGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>wanna have some good date things? anyday</h1>
+  <div class="button-container">
+    <button id="yes-btn">Yes</button>
+    <button id="no-btn">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('no-btn');
+
+    noBtn.addEventListener('mouseenter', () => {
+      // Move the button randomly within a 150x100 area nearby
+      const offsetX = Math.floor(Math.random() * 300) - 100;
+      const offsetY = Math.floor(Math.random() * 250) - 75;
+      noBtn.style.position = 'relative';
+      noBtn.style.left = offsetX + 'px';
+      noBtn.style.top = offsetY + 'px';
+    });
+
+    noBtn.addEventListener('click', (e) => {
+      // Prevent clicks on "No"
+      e.preventDefault();
+    });
+
+    const yesBtn = document.getElementById('yes-btn');
+    yesBtn.addEventListener('click', () => {
+      alert('Yay! text me when you are all dressed up! 💖');
+    });
+  </script>
+</body>
+</html>

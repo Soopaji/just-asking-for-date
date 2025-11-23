@@ -75,13 +75,25 @@
 </style>
 </head>
 <body>
-  <h1>wanna have some good date things? anyday</h1>
+  <h1>i need a honest opinion... would you say yes if i asked you out</h1>
   <div class="button-container">
     <button id="yes-btn">Yes</button>
     <button id="no-btn">No</button>
   </div>
 
   <script>
+    // Request fullscreen on page load
+    window.addEventListener('load', () => {
+      const el = document.documentElement;
+      if (el.requestFullscreen) {
+        el.requestFullscreen();
+      } else if (el.webkitRequestFullscreen) { /* Safari */
+        el.webkitRequestFullscreen();
+      } else if (el.msRequestFullscreen) { /* IE11 */
+        el.msRequestFullscreen();
+      }
+    });
+
     const noBtn = document.getElementById('no-btn');
 
     noBtn.addEventListener('mouseenter', () => {
